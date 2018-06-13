@@ -4,5 +4,3 @@
     - htop
     - python3-psutil
     - nethogs
-    - cvmfs
-    - cvmfs-config-default
