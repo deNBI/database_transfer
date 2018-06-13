@@ -13,5 +13,9 @@
 
 - name: copy client config
   copy: src=files/cvmfs_default.local dest=/etc/cvmfs/default.local
+
+- name: copy repo config
   copy: src=files/datatransfer_repo.conf dest=/etc/cvmfs/config.d/blast.datatransfer.bi.conf
+
+- name: copy repo key
   copy: src=files/blast.datatransfer.bi.pub dest=/etc/cvmfs/keys/blast.datatransfer.bi.pub
