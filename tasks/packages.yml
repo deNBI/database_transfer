@@ -1,0 +1,8 @@
+- name: Install packages
+  apt: name={{item}}
+  with_items:
+    - htop
+    - python3-psutil
+    - nethogs
+    - cvmfs
+    - cvmfs-config-default
