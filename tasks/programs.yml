@@ -1,0 +1,7 @@
+- name: install program to measure network speed
+  copy: 
+    src: files/print_network_speed.py
+    dest: /usr/local/bin/print_network_speed
+    owner: root
+    group: root
+    mode: 0755
