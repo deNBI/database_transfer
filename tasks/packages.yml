@@ -4,3 +4,4 @@
     - htop
     - python3-psutil
     - nethogs
+    - ncdu
