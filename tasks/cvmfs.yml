@@ -2,6 +2,10 @@
   apt:
     deb: https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 
+- name: Update Repositories
+  apt: update_cache=yes
+  changed_when: False
+
 - name: Install packages
   apt: name={{item}}
   with_items:
@@ -11,11 +15,11 @@
 - name: finish cvmfs setup
   shell: cvmfs_config setup
 
-- name: copy client config
-  copy: src=files/cvmfs_default.local dest=/etc/cvmfs/default.local
-
 - name: copy repo config
-  copy: src=files/datatransfer_repo.conf dest=/etc/cvmfs/config.d/blast.datatransfer.bi.conf
+  copy: src=files/config.datatransfer.bi.conf dest=/etc/cvmfs/config.d/config.datatransfer.bi.conf
 
 - name: copy repo key
-  copy: src=files/blast.datatransfer.bi.pub dest=/etc/cvmfs/keys/blast.datatransfer.bi.pub
+  copy: src=files/config.datatransfer.bi.pub dest=/etc/cvmfs/keys/config.datatransfer.bi.pub
+
+- name: enable config repository
+  copy: src=files/70-config_repo.conf dest=/etc/cvmfs/default.d/70-config_repo.conf
