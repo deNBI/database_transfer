@@ -1,6 +1,9 @@
 #!/bin/bash
 
-sleep 120
+# try to wait until we are online
+while ! ping -c 1 heise.de; do
+	sleep 2
+done
 sudo apt-get install software-properties-common --yes
 sudo apt-add-repository ppa:ansible/ansible --yes
 sleep 30
