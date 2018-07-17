@@ -16,10 +16,10 @@
   shell: cvmfs_config setup
 
 - name: copy repo config
-  copy: src=files/config.datatransfer.bi.conf dest=/etc/cvmfs/config.d/config.datatransfer.bi.conf
+  copy: src=files/test.datatransfer.bi.conf dest=/etc/cvmfs/config.d/test.datatransfer.bi.conf
 
 - name: copy repo key
-  copy: src=files/config.datatransfer.bi.pub dest=/etc/cvmfs/keys/config.datatransfer.bi.pub
+  copy: src=files/test.datatransfer.bi.pub dest=/etc/cvmfs/keys/test.datatransfer.bi.pub
 
-- name: enable config repository
-  copy: src=files/70-config_repo.conf dest=/etc/cvmfs/default.d/70-config_repo.conf
+- name: repository
+  copy: src=files/cvmfs_default.local dest=/etc/cvmfs/default.local
