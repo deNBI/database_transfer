@@ -1,1 +1,1 @@
-CVMFS_REPOSITORIES=test.datatransfer.bi,text_ext.datatransfer.bi
+CVMFS_REPOSITORIES=text_ext.datatransfer.bi
